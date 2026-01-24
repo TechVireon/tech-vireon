@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Vireon | Where Vision Meets Innovation</title>
+
+  
+  <meta name="google-site-verification" content="53Fvun0iHge94xgWjAz4eD4QSVxOQstnFFGI94PQrrw" />
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- AOS ANIMATION -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+/* ========== GLOBAL ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #222;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #1800ad;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ff3131;
+}
+
+/* ========== HERO ========== */
+.hero {
+  height: 90vh;
+  background: linear-gradient(135deg, #1800ad, #ff3131);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+}
+
+.hero span {
+  color: #ffeaea;
+}
+
+.hero p {
+  margin: 20px auto;
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  background: #fff;
+  color: #1800ad;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+/* ========== SECTIONS ========== */
+section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+/* ========== SERVICES ========== */
+.services-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.service-card i {
+  font-size: 40px;
+  color: #ff3131;
+  margin-bottom: 15px;
+}
+
+/* ========== ABOUT ========== */
+.about {
+  background: #1800ad;
+  color: #fff;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.about p {
+  max-width: 900px;
+  margin: 15px auto;
+  line-height: 1.7;
+}
+
+/* ========== CONTACT ========== */
+.contact-form {
+  max-width: 450px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  border: none;
+  cursor: pointer;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.phone-icon,
+.email-icon {
+  color: #000;
+  margin-right: 8px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ========== FLOATING BUTTONS ========== */
+.whatsapp-float,
+.email-float {
+  position: fixed;
+  bottom: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.whatsapp-float {
+  right: 20px;
+  background: #25D366;
+}
+
+.email-float {
+  left: 20px;
+  background: #1800ad;
+}
+
+.whatsapp-float:hover,
+.email-float:hover {
+  transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="logo.png" alt="Tech Vireon Logo">
+    <span>Tech Vireon</span>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home" data-aos="fade-up">
+  <div>
+    <h1>Tech Vireon <br><span>Where Vision Meets Innovation</span></h1>
+    <p>We deliver high-quality digital solutions tailored to modern business needs.</p>
+    <a href="#contact" class="btn">Get Started</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 data-aos="fade-up">Our Services</h2>
+  <br><br>
+  <div class="services-box">
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-code"></i>
+      <h3>Python Programming & Automation</h3>
+      <p>Smart automation to reduce workload and increase efficiency.</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-gears"></i>
+      <h3>Software & Business Automation</h3>
+      <p>Custom software solutions designed for small businesses.</p>
+    </div>
+
+    <div class="service-card" data-aos="zoom-in">
+      <i class="fa-solid fa-database"></i>
+      <h3>Accurate & Fast Data Entry</h3>
+      <p>Reliable, precise, and secure data handling services.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about" data-aos="fade-right">
+  <h2 class="about-title">About Tech Vireon</h2>
+
+  <p>
+    <strong>Tech Vireon</strong> is a digital solutions company focused on innovation,
+    automation, and smart technology. We help startups, small businesses,
+    and individuals convert their ideas into reliable digital systems.
+  </p>
+
+  <p>
+    Our core expertise includes Python programming, business automation,
+    custom software development, and accurate data management. We believe
+    technology should simplify processes, save time, and create long-term value.
+  </p>
+
+  <p>
+    Every project at Tech Vireon is handled with precision, transparency,
+    and a future-focused mindset. We work closely with our clients to ensure
+    each solution aligns perfectly with their goals.
+  </p>
+
+  <p style="margin-top:25px;">
+    <strong>Muhammad Usman</strong><br>
+    CEO & Founder, Tech Vireon
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 data-aos="fade-up">Contact Us</h2>
+  <br><br>
+  <form class="contact-form" data-aos="fade-left"
+    action="https://formsubmit.co/techvireon@gmail.com"
+    method="POST">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Message from Tech Vireon">
+    <input type="hidden" name="_autoresponse" value="
+Thank you for contacting Tech Vireon.
+We will get back to you shortly.
+
+📞 +92 349 4496289
+📧 techvireon@gmail.com
+">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button class="btn">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <p><i class="fa-solid fa-phone phone-icon"></i> +92 349 4496289</p>
+    <p><i class="fa-solid fa-envelope email-icon"></i> techvireon@gmail.com</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Tech Vireon | Where Vision Meets Innovation
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/923494496289" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="mailto:techvireon@gmail.com" class="email-float">
+  <i class="fa-solid fa-envelope"></i>
+</a>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
