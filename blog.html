@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights | Tech Vireon</title>
+    <meta name="description"
+        content="Read our thoughts on technology, Python automation, data outsourcing, software architecture, and the digital economy in Pakistan and Saudi Arabia.">
+    <meta name="keywords"
+        content="Tech Blog, Tech Vireon Blog, Python automation guides, outsourcing data entry, KSA tech boom 2026">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Blog List Styles */
+        .blog-filter-section {
+            padding: 40px 0;
+            background: var(--bg-light);
+            border-bottom: 1px solid rgba(24,0,173,0.05);
+        }
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .category-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #fff;
+            border: 1px solid #ddd;
+            color: var(--text-dark);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--primary-blue);
+            color: #fff;
+            border-color: var(--primary-blue);
+        }
+        .search-box {
+            position: relative;
+            max-width: 350px;
+            width: 100%;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(24, 0, 173, 0.1);
+        }
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+        
+        .blog-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .author-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .author-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 60px 0;
+            grid-column: 1 / -1;
+        }
+        .no-results i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        .read-time {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5,15 L95,15 L85,25 L55,25 L50,35 L45,25 L15,25 Z" fill="#ff3131" />
+                    <path d="M15,30 L38,30 L50,65 L62,30 L85,30 L50,95 Z" fill="#1800ad" />
+                </svg>
+                Tech Vireon
+            </a>
+
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn btn-primary" style="color: #fff; padding: 10px 25px;">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Hero Section -->
+    <section class="hero" style="min-height: 40vh; padding-top: 120px; text-align: center; display: flex; align-items: center;">
+        <div class="container reveal">
+            <h1>Tech Vireon Insights</h1>
+            <p style="max-width: 600px; margin: 0 auto; font-size: 1.2rem;">Expert advice, tutorials, and deep-dives on software engineering, business automation, and data entry services.</p>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <div class="blog-filter-section">
+        <div class="container filter-container">
+            <div class="category-tabs">
+                <button class="filter-tab active" data-category="all">All Articles</button>
+                <button class="filter-tab" data-category="automation">Automation</button>
+                <button class="filter-tab" data-category="data-services">Data Services</button>
+                <button class="filter-tab" data-category="software-dev">Software Dev</button>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="blogSearch" placeholder="Search articles...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Grid Section -->
+    <section class="section">
+        <div class="container">
+            <div class="blog-list-grid" id="blogListGrid">
+                
+                <!-- Blog Card 1 -->
+                <div class="blog-card reveal" data-category="automation" style="display: block;">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=600"
+                        alt="Python Automation" class="blog-img">
+                    <div class="blog-content">
+                        <span class="blog-date">Automation | March 10, 2026</span>
+                        <h3 class="blog-title"><a href="blog-python-automation.html" style="color: inherit;">Why Python is the King of Automation</a></h3>
+                        <p>Explore how Python libraries, concise syntax, and open-source packages are revolutionizing how modern businesses streamline their daily operations...</p>
+                        <div class="blog-card-footer">
+                            <div class="author-info">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-img">
+                                <span class="author-name">Usman R.</span>
+                            </div>
+                            <span class="read-time"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2 -->
+                <div class="blog-card reveal" data-category="data-services" style="display: block; transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1508317469940-e3de49ba902e?auto=format&fit=crop&q=80&w=600"
+                        alt="Outsourcing Data Entry" class="blog-img">
+                    <div class="blog-content">
+                        <span class="blog-date">Data Services | March 5, 2026</span>
+                        <h3 class="blog-title"><a href="blog-data-entry-outsourcing.html" style="color: inherit;">Outsourcing Data Entry: Pros & Cons</a></h3>
+                        <p>Evaluate the cost efficiency, scalability, and performance benefits of data entry outsourcing alongside security and risk mitigation strategies...</p>
+                        <div class="blog-card-footer">
+                            <div class="author-info">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-img">
+                                <span class="author-name">Sara M.</span>
+                            </div>
+                            <span class="read-time"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3 -->
+                <div class="blog-card reveal" data-category="software-dev" style="display: block; transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=600"
+                        alt="Saudi Arabia Tech Boom" class="blog-img">
+                    <div class="blog-content">
+                        <span class="blog-date">Software Dev | Feb 28, 2026</span>
+                        <h3 class="blog-title"><a href="blog-saudi-tech-boom.html" style="color: inherit;">Saudi Arabia's Tech Boom in 2026</a></h3>
+                        <p>Explore the rapid growth of Saudi Arabia's digital economy under Vision 2030, and the strategic roll-out of cloud infrastructure and AI policies...</p>
+                        <div class="blog-card-footer">
+                            <div class="author-info">
+                                <img src="images/ceo.jpg" alt="Author" class="author-img" onerror="this.src='https://randomuser.me/api/portraits/men/1.jpg'">
+                                <span class="author-name">Muhammad Usman</span>
+                            </div>
+                            <span class="read-time"><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results State -->
+                <div class="no-results" id="noResults">
+                    <i class="fas fa-search-minus"></i>
+                    <h3>No articles found</h3>
+                    <p>We couldn't find any articles matching your search criteria. Try a different term or category!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 20px;">Tech Vireon</h3>
+                    <div class="footer-about">
+                        <p>Where Vision Meets Innovation. Delivering high-quality digital solutions, Python automation, and software development.</p>
+                        <div class="social-links">
+                            <a href="https://x.com/tech_vireon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/share/18PRmfWMXR/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=k0vwucr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@techvireon?si=H9oHIfI1lX01nIqf" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Python Automation</a></li>
+                        <li><a href="services.html">Software Development</a></li>
+                        <li><a href="services.html">Business Automation</a></li>
+                        <li><a href="services.html">Data Entry</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul style="color: #aaa;">
+                        <li style="display: flex; align-items: center; margin-bottom: 15px;"><i class="fas fa-phone-alt"
+                                style="margin-right: 12px; color: var(--primary-red); width: 16px; text-align: center;"></i>
+                            +923494496289</li>
+                        <li style="display: flex; align-items: center; margin-bottom: 15px;"><i class="fas fa-envelope"
+                                style="margin-right: 12px; color: var(--primary-red); width: 16px; text-align: center;"></i>
+                            techvireon@gmail.com</li>
+                        <li style="display: flex; align-items: center;"><i class="fas fa-map-marker-alt"
+                                style="margin-right: 12px; color: var(--primary-red); width: 16px; text-align: center;"></i>
+                            Pakistan & Saudi Arabia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tech Vireon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923494496289" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Custom JS and Filter Logic -->
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const cards = document.querySelectorAll('.blog-card');
+            const searchInput = document.getElementById('blogSearch');
+            const noResults = document.getElementById('noResults');
+
+            let currentCategory = 'all';
+            let searchQuery = '';
+
+            // Filtering Function
+            const filterBlogs = () => {
+                let matchCount = 0;
+
+                cards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    const title = card.querySelector('.blog-title').innerText.toLowerCase();
+                    const text = card.querySelector('.blog-content p').innerText.toLowerCase();
+
+                    const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
+                    const matchesSearch = title.includes(searchQuery) || text.includes(searchQuery);
+
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = 'block';
+                        // Keep scroll reveal animation active if needed
+                        card.classList.add('active');
+                        matchCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (matchCount === 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+            };
+
+            // Tab Click Handlers
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentCategory = tab.getAttribute('data-category');
+                    filterBlogs();
+                });
+            });
+
+            // Search Keyup Handlers
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                filterBlogs();
+            });
+        });
+    </script>
+</body>
+
+</html>
