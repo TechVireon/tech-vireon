@@ -180,4 +180,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 8. FAQ Accordion Toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    const faqAnswers = document.querySelectorAll('.faq-answer');
+
+    if (faqQuestions.length && faqAnswers.length) {
+        faqQuestions.forEach(button => {
+            button.addEventListener('click', function() {
+                const answerId = this.dataset.answer;
+                const targetAnswer = document.getElementById(answerId);
+                const parentItem = this.closest('.faq-item');
+
+                faqQuestions.forEach(btn => btn.closest('.faq-item')?.classList.remove('active'));
+                faqAnswers.forEach(answer => answer.classList.remove('active'));
+
+                if (parentItem) {
+                    parentItem.classList.add('active');
+                }
+                if (targetAnswer) {
+                    targetAnswer.classList.add('active');
+                }
+            });
+        });
+    }
 });
